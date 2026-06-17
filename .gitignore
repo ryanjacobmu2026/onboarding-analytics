@@ -1,0 +1,15 @@
+# Generated artifacts (reproducible with `python3 run.py`)
+data/
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Environment / secrets
+.env
+
+# macOS
+.DS_Store

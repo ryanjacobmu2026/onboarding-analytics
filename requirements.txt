@@ -1,0 +1,5 @@
+# This platform runs entirely on the Python standard library -- no install needed.
+# The dashboard is a single self-contained HTML file (no JS libraries, no CDN).
+#
+# The CSV exports in output/ are ready to import directly into Power BI Desktop
+# or Google Sheets -- see POWERBI_GUIDE.md.
