@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Onboarding Analytics</title>
+<style>
+  :root { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+  body { margin: 0; background: #f4f5f7; color: #1d1d1f; }
+  header { background: linear-gradient(120deg, #1c2333, #2b3a67); color: #fff; padding: 30px 40px; }
+  header h1 { margin: 0; font-size: 22px; letter-spacing: -0.2px; }
+  header p { margin: 6px 0 0; color: #aeb6c7; font-size: 13px; }
+  main { max-width: 1060px; margin: 0 auto; padding: 26px 24px 64px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+  .card { background: #fff; border: 1px solid #e6e8eb; border-radius: 12px; padding: 18px; }
+  .kpi { font-size: 28px; font-weight: 650; }
+  .kpi-label { font-size: 12px; color: #6b7280; margin-top: 4px; }
+  .kpi-sub { font-size: 11px; color: #9aa1ab; margin-top: 2px; }
+  section { background: #fff; border: 1px solid #e6e8eb; border-radius: 12px; padding: 22px; margin-top: 22px; }
+  section h2 { margin: 0 0 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; }
+  .funnel-row { display: grid; grid-template-columns: 130px 1fr 150px; align-items: center; gap: 12px;
+                 margin: 7px 0; font-size: 13px; }
+  .funnel-label { color: #374151; font-weight: 500; }
+  .funnel-track { background: #eef0f2; border-radius: 6px; height: 20px; overflow: hidden; }
+  .funnel-fill { display: block; height: 100%; background: linear-gradient(90deg, #3b5bdb, #5c7cfa); }
+  .funnel-val { color: #6b7280; text-align: right; }
+  .conv { grid-column: 2 / 3; font-size: 11px; color: #9aa1ab; }
+  .bar-row { display: flex; align-items: center; gap: 12px; margin: 8px 0; font-size: 13px; }
+  .bar-label { width: 110px; color: #374151; }
+  .bar-track { flex: 1; background: #eef0f2; border-radius: 6px; height: 16px; overflow: hidden; }
+  .bar-fill { display: block; height: 100%; }
+  .bar-val { width: 200px; text-align: right; color: #6b7280; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid #eef0f2; text-align: left; }
+  th { color: #6b7280; font-weight: 600; }
+  .mini-track { display: inline-block; width: 90px; height: 8px; background: #eef0f2; border-radius: 4px;
+                 overflow: hidden; vertical-align: middle; margin-right: 8px; }
+  .mini-fill { display: block; height: 100%; background: #3b5bdb; }
+  .chart { width: 100%; height: auto; }
+  .grid-line, .grid { stroke: #eef0f2; stroke-width: 1; }
+  .ylab { fill: #9aa1ab; font-size: 11px; text-anchor: end; }
+  .xlab { fill: #9aa1ab; font-size: 10px; text-anchor: middle; }
+  .legend { font-size: 12px; color: #6b7280; margin-top: 8px; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  .muted { color: #9aa1ab; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI API Integration &amp; Onboarding Analytics</h1>
+  <p>Generated 2026-06-17 18:26 &nbsp;·&nbsp; 600 developers tracked across the onboarding funnel</p>
+</header>
+<main>
+  <div class="grid">
+    <div class="card"><div class="kpi" style="color:#1d1d1f">600</div><div class="kpi-label">Developers tracked</div></div>
+    <div class="card"><div class="kpi" style="color:#3b5bdb">45.8%</div><div class="kpi-label">Activation rate</div><div class="kpi-sub">signup → activated</div></div>
+    <div class="card"><div class="kpi" style="color:#0c8599">84h</div><div class="kpi-label">Median time to first call</div><div class="kpi-sub">activation latency</div></div>
+    <div class="card"><div class="kpi" style="color:#1d1d1f">223h</div><div class="kpi-label">P90 activation latency</div><div class="kpi-sub">slow tail</div></div>
+    <div class="card"><div class="kpi" style="color:#f08c00">77.8%</div><div class="kpi-label">Enterprise usage share</div><div class="kpi-sub">of all API calls</div></div>
+    <div class="card"><div class="kpi" style="color:#1a7f5a">+15.8%</div><div class="kpi-label">MoM signup growth</div><div class="kpi-sub">latest vs prior month</div></div>
+  </div>
+
+  <section>
+    <h2>Onboarding funnel</h2>
+    <div class="funnel-row"><span class="funnel-label">Signed Up</span><span class="funnel-track"><span class="funnel-fill" style="width:100.0%"></span></span><span class="funnel-val">600 &middot; 100.0%</span></div><div class="funnel-row"><span class="funnel-label">Verified Email</span><span class="funnel-track"><span class="funnel-fill" style="width:91.8%"></span></span><span class="funnel-val">551 &middot; 91.8%</span><span class="conv">↳ 91.8% of previous</span></div><div class="funnel-row"><span class="funnel-label">Created Api Key</span><span class="funnel-track"><span class="funnel-fill" style="width:78.8%"></span></span><span class="funnel-val">473 &middot; 78.8%</span><span class="conv">↳ 85.8% of previous</span></div><div class="funnel-row"><span class="funnel-label">First Api Call</span><span class="funnel-track"><span class="funnel-fill" style="width:66.3%"></span></span><span class="funnel-val">398 &middot; 66.3%</span><span class="conv">↳ 84.1% of previous</span></div><div class="funnel-row"><span class="funnel-label">Activated</span><span class="funnel-track"><span class="funnel-fill" style="width:45.8%"></span></span><span class="funnel-val">275 &middot; 45.8%</span><span class="conv">↳ 69.1% of previous</span></div><div class="funnel-row"><span class="funnel-label">Integrated</span><span class="funnel-track"><span class="funnel-fill" style="width:23.5%"></span></span><span class="funnel-val">141 &middot; 23.5%</span><span class="conv">↳ 51.3% of previous</span></div>
+  </section>
+
+  <section>
+    <h2>Signups &amp; activations over time (weekly)</h2>
+    <svg viewBox="0 0 920 280" class="chart" role="img" aria-label="Signups over time">
+      <line x1="44" y1="238.0" x2="904" y2="238.0" class="grid"/><text x="36" y="242.0" class="ylab">0</text><line x1="44" y1="129.0" x2="904" y2="129.0" class="grid"/><text x="36" y="133.0" class="ylab">27</text><line x1="44" y1="20.0" x2="904" y2="20.0" class="grid"/><text x="36" y="24.0" class="ylab">55</text>
+      <polyline points="44.0,174.6 77.1,198.4 110.2,186.5 143.2,158.7 176.3,202.3 209.4,134.9 242.5,178.5 275.5,138.9 308.6,158.7 341.7,166.7 374.8,202.3 407.8,138.9 440.9,162.7 474.0,170.6 507.1,170.6 540.2,150.8 573.2,174.6 606.3,115.1 639.4,107.2 672.5,142.9 705.5,158.7 738.6,119.1 771.7,119.1 804.8,142.9 837.8,91.3 870.9,20.0 904.0,162.7" fill="none" stroke="#3b5bdb" stroke-width="2.5"/>
+      <polyline points="44.0,222.1 77.1,214.2 110.2,198.4 143.2,186.5 176.3,222.1 209.4,198.4 242.5,202.3 275.5,190.4 308.6,214.2 341.7,194.4 374.8,226.1 407.8,190.4 440.9,198.4 474.0,198.4 507.1,214.2 540.2,202.3 573.2,222.1 606.3,194.4 639.4,190.4 672.5,194.4 705.5,210.3 738.6,170.6 771.7,174.6 804.8,198.4 837.8,162.7 870.9,138.9 904.0,206.3" fill="none" stroke="#0c8599" stroke-width="2" stroke-dasharray="5 4"/>
+      <circle cx="44.0" cy="174.6" r="3" fill="#3b5bdb"><title>2025-W51: 16 signups, 4 activated</title></circle><circle cx="77.1" cy="198.4" r="3" fill="#3b5bdb"><title>2025-W52: 10 signups, 6 activated</title></circle><circle cx="110.2" cy="186.5" r="3" fill="#3b5bdb"><title>2026-W01: 13 signups, 10 activated</title></circle><circle cx="143.2" cy="158.7" r="3" fill="#3b5bdb"><title>2026-W02: 20 signups, 13 activated</title></circle><circle cx="176.3" cy="202.3" r="3" fill="#3b5bdb"><title>2026-W03: 9 signups, 4 activated</title></circle><circle cx="209.4" cy="134.9" r="3" fill="#3b5bdb"><title>2026-W04: 26 signups, 10 activated</title></circle><circle cx="242.5" cy="178.5" r="3" fill="#3b5bdb"><title>2026-W05: 15 signups, 9 activated</title></circle><circle cx="275.5" cy="138.9" r="3" fill="#3b5bdb"><title>2026-W06: 25 signups, 12 activated</title></circle><circle cx="308.6" cy="158.7" r="3" fill="#3b5bdb"><title>2026-W07: 20 signups, 6 activated</title></circle><circle cx="341.7" cy="166.7" r="3" fill="#3b5bdb"><title>2026-W08: 18 signups, 11 activated</title></circle><circle cx="374.8" cy="202.3" r="3" fill="#3b5bdb"><title>2026-W09: 9 signups, 3 activated</title></circle><circle cx="407.8" cy="138.9" r="3" fill="#3b5bdb"><title>2026-W10: 25 signups, 12 activated</title></circle><circle cx="440.9" cy="162.7" r="3" fill="#3b5bdb"><title>2026-W11: 19 signups, 10 activated</title></circle><circle cx="474.0" cy="170.6" r="3" fill="#3b5bdb"><title>2026-W12: 17 signups, 10 activated</title></circle><circle cx="507.1" cy="170.6" r="3" fill="#3b5bdb"><title>2026-W13: 17 signups, 6 activated</title></circle><circle cx="540.2" cy="150.8" r="3" fill="#3b5bdb"><title>2026-W14: 22 signups, 9 activated</title></circle><circle cx="573.2" cy="174.6" r="3" fill="#3b5bdb"><title>2026-W15: 16 signups, 4 activated</title></circle><circle cx="606.3" cy="115.1" r="3" fill="#3b5bdb"><title>2026-W16: 31 signups, 11 activated</title></circle><circle cx="639.4" cy="107.2" r="3" fill="#3b5bdb"><title>2026-W17: 33 signups, 12 activated</title></circle><circle cx="672.5" cy="142.9" r="3" fill="#3b5bdb"><title>2026-W18: 24 signups, 11 activated</title></circle><circle cx="705.5" cy="158.7" r="3" fill="#3b5bdb"><title>2026-W19: 20 signups, 7 activated</title></circle><circle cx="738.6" cy="119.1" r="3" fill="#3b5bdb"><title>2026-W20: 30 signups, 17 activated</title></circle><circle cx="771.7" cy="119.1" r="3" fill="#3b5bdb"><title>2026-W21: 30 signups, 16 activated</title></circle><circle cx="804.8" cy="142.9" r="3" fill="#3b5bdb"><title>2026-W22: 24 signups, 10 activated</title></circle><circle cx="837.8" cy="91.3" r="3" fill="#3b5bdb"><title>2026-W23: 37 signups, 19 activated</title></circle><circle cx="870.9" cy="20.0" r="3" fill="#3b5bdb"><title>2026-W24: 55 signups, 25 activated</title></circle><circle cx="904.0" cy="162.7" r="3" fill="#3b5bdb"><title>2026-W25: 19 signups, 8 activated</title></circle>
+      <text x="44.0" y="266" class="xlab">2025-W51</text><text x="176.3" y="266" class="xlab">2026-W03</text><text x="308.6" y="266" class="xlab">2026-W07</text><text x="440.9" y="266" class="xlab">2026-W11</text><text x="573.2" y="266" class="xlab">2026-W15</text><text x="705.5" y="266" class="xlab">2026-W19</text><text x="837.8" y="266" class="xlab">2026-W23</text>
+    </svg>
+    <div class="legend"><span class="dot" style="background:#3b5bdb"></span>Signups
+      <span class="dot" style="background:#0c8599; margin-left:18px"></span>Activated</div>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2>Activation latency by plan</h2>
+      <div class="bar-row"><span class="bar-label">Free</span><span class="bar-track"><span class="bar-fill" style="width:100.0%;background:#868e96"></span></span><span class="bar-val">133h median &middot; 254h p90</span></div><div class="bar-row"><span class="bar-label">Pro</span><span class="bar-track"><span class="bar-fill" style="width:35.1%;background:#3b5bdb"></span></span><span class="bar-val">47h median &middot; 86h p90</span></div><div class="bar-row"><span class="bar-label">Enterprise</span><span class="bar-track"><span class="bar-fill" style="width:10.1%;background:#f08c00"></span></span><span class="bar-val">13h median &middot; 19h p90</span></div>
+    </section>
+    <section>
+      <h2>Weekly activation cohorts</h2>
+      <table>
+        <thead><tr><th>Cohort</th><th style="text-align:right">Size</th><th>Activation rate</th></tr></thead>
+        <tbody><tr><td>2026-W14</td><td style="text-align:right">22</td><td><span class="mini-track"><span class="mini-fill" style="width:40.9%"></span></span>40.9%</td></tr><tr><td>2026-W15</td><td style="text-align:right">16</td><td><span class="mini-track"><span class="mini-fill" style="width:25.0%"></span></span>25.0%</td></tr><tr><td>2026-W16</td><td style="text-align:right">31</td><td><span class="mini-track"><span class="mini-fill" style="width:35.5%"></span></span>35.5%</td></tr><tr><td>2026-W17</td><td style="text-align:right">33</td><td><span class="mini-track"><span class="mini-fill" style="width:36.4%"></span></span>36.4%</td></tr><tr><td>2026-W18</td><td style="text-align:right">24</td><td><span class="mini-track"><span class="mini-fill" style="width:45.8%"></span></span>45.8%</td></tr><tr><td>2026-W19</td><td style="text-align:right">20</td><td><span class="mini-track"><span class="mini-fill" style="width:35.0%"></span></span>35.0%</td></tr><tr><td>2026-W20</td><td style="text-align:right">30</td><td><span class="mini-track"><span class="mini-fill" style="width:56.7%"></span></span>56.7%</td></tr><tr><td>2026-W21</td><td style="text-align:right">30</td><td><span class="mini-track"><span class="mini-fill" style="width:53.3%"></span></span>53.3%</td></tr><tr><td>2026-W22</td><td style="text-align:right">24</td><td><span class="mini-track"><span class="mini-fill" style="width:41.7%"></span></span>41.7%</td></tr><tr><td>2026-W23</td><td style="text-align:right">37</td><td><span class="mini-track"><span class="mini-fill" style="width:51.3%"></span></span>51.3%</td></tr><tr><td>2026-W24</td><td style="text-align:right">55</td><td><span class="mini-track"><span class="mini-fill" style="width:45.5%"></span></span>45.5%</td></tr><tr><td>2026-W25</td><td style="text-align:right">19</td><td><span class="mini-track"><span class="mini-fill" style="width:42.1%"></span></span>42.1%</td></tr></tbody>
+      </table>
+    </section>
+  </div>
+
+  <section>
+    <h2>By plan</h2>
+    <table>
+      <thead><tr><th>Plan</th><th style="text-align:right">Developers</th><th style="text-align:right">Activation</th>
+      <th style="text-align:right">Avg API calls (30d)</th><th>Usage share</th></tr></thead>
+      <tbody><tr><td>Free</td><td style="text-align:right">407</td><td style="text-align:right">40.3%</td><td style="text-align:right">1,146</td><td><span class="mini-track"><span class="mini-fill" style="width:5.5%"></span></span>5.5%</td></tr><tr><td>Pro</td><td style="text-align:right">132</td><td style="text-align:right">50.0%</td><td style="text-align:right">10,880</td><td><span class="mini-track"><span class="mini-fill" style="width:16.8%"></span></span>16.8%</td></tr><tr><td>Enterprise</td><td style="text-align:right">61</td><td style="text-align:right">73.8%</td><td style="text-align:right">109,135</td><td><span class="mini-track"><span class="mini-fill" style="width:77.8%"></span></span>77.8%</td></tr></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>By region</h2>
+    <table>
+      <thead><tr><th>Region</th><th style="text-align:right">Developers</th><th style="text-align:right">Activation</th>
+      <th style="text-align:right">Avg API calls (30d)</th><th>Usage share</th></tr></thead>
+      <tbody><tr><td>North America</td><td style="text-align:right">209</td><td style="text-align:right">47.9%</td><td style="text-align:right">19,267</td><td><span class="mini-track"><span class="mini-fill" style="width:47.0%"></span></span>47.0%</td></tr><tr><td>Europe</td><td style="text-align:right">154</td><td style="text-align:right">43.5%</td><td style="text-align:right">10,089</td><td><span class="mini-track"><span class="mini-fill" style="width:18.1%"></span></span>18.1%</td></tr><tr><td>India</td><td style="text-align:right">93</td><td style="text-align:right">43.0%</td><td style="text-align:right">10,133</td><td><span class="mini-track"><span class="mini-fill" style="width:11.0%"></span></span>11.0%</td></tr><tr><td>Apac</td><td style="text-align:right">103</td><td style="text-align:right">47.6%</td><td style="text-align:right">14,885</td><td><span class="mini-track"><span class="mini-fill" style="width:17.9%"></span></span>17.9%</td></tr><tr><td>Latam</td><td style="text-align:right">41</td><td style="text-align:right">46.3%</td><td style="text-align:right">12,288</td><td><span class="mini-track"><span class="mini-fill" style="width:5.9%"></span></span>5.9%</td></tr></tbody>
+    </table>
+  </section>
+</main>
+</body>
+</html>

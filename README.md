@@ -11,6 +11,8 @@ ready for Power BI / Google Sheets**.
 
 Pure Python standard library — no install, no API key, opens in any browser.
 
+**🔗 Live demo:** https://ryanjacobmu2026.github.io/onboarding-analytics/
+
 ![Onboarding analytics dashboard](docs/dashboard.png)
 
 *Self-contained HTML dashboard — funnel conversion, activation latency, weekly
